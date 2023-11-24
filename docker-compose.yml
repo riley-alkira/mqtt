@@ -1,0 +1,12 @@
+version: "2.2"
+services:
+  setup:
+    mosquitto:
+    restart: always
+    image: eclipse-mosquitto
+    volumes:
+      - ./mosquitto:/mosquitto
+      - ./mosquitto/data:/mosquitto/data
+      - ./mosquitto/log:/mosquitto/log
+    ports:
+      - 1883:1883
